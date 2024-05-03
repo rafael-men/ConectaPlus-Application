@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    height: 100%; /* alterado para 100% para evitar barra de rolagem */
+    overflow: hidden; /* remover barra de rolagem */
+    height: 500vh;
+    background-color: #050f1b;
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+header.rolagem {
+    background-color: gray;
+    padding: 20px 4%;
+}
+
+header.rolagem a,
+header.rolagem i {
+    color: #fff;
+    text-shadow: 0 0 5px #004AAD, 0 0 10px #004AAD;
+    /* Sombra do texto para simular brilho e cor fluorescente azul */
+}
+
+
+header i {
+    font-size: 30px;
+    color: #fff;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-contato button {
+    width: 120px;
+    height: 40px;
+    border: 0;
+    background-color: #004AAD;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+    background: linear-gradient(45deg, #01224d, #0258a8); /* gradiente  */
+}
+
+.banner {
+    height: 100vh;
+    background-image: url(/imagens/conec.jpg);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 4em;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 0 10px blue;
+}
+
+.banner h1 span {
+    color: white;
+}
