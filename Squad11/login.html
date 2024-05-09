@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.js"></script>
   <title>Tela de Login</title>
 </head>
 
@@ -25,11 +27,11 @@
       <input type="text" placeholder="Name">
       <input type="email" placeholder="Email">
       <input type="password" placeholder="Password">
-      <button><a href="cadastro.html">Inscreva-se</a></button>
+      <button><a href="login.html">Inscreva-se</a></button>
     </form>
   </div>
   <div class="form-container sign-in">
-    <form>
+    <form action="javascript:void(0);">
       <h1>Entrar</h1>
       <div class="social-icons">
         <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -38,10 +40,10 @@
         <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
       <span>ou use sua senha de e-mail</span>
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
+      <input id="in_email_login" type="email" placeholder="Email">
+      <input id="in_pass_login" type="password" placeholder="Password">
       <a href="#">Esqueceu sua Senha?</a>
-      <button>Entrar</button>
+      <button id="btn_login">Entrar</button>
     </form>
   </div>
   <div class="toggle-container">
@@ -60,7 +62,8 @@
   </div>
 </div>
 
-<script src="/JS/app.js"></script>
+<script type="module" src="JS/login.js"></script>
+<script src="JS/app.js"></script>
 </body>
 
 </html>
