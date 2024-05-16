@@ -23,16 +23,35 @@ const sequelize = new Sequelize('nome do schema no BD', 'root padrão ou persona
 3. Após configurar as credenciais, ainda no diretório do back-end, execute os seguintes comandos no terminal:
 
 Este comando instalará todas as dependências necessárias: 
-
+```
 npm i
+```
 
 Este comando iniciará o servidor back-end:
-
+```
 npm start
+```
 
-4. Agora, você pode abrir o arquivo index.html do front-end no servidor. No caso, pode usar o Live Server
+4. Agora, você pode abrir o arquivo index.html do front-end no servidor. No caso, pode usar o Live Server.
 
 Obs.: Em caso de erro após o primeiro ciclo de welcome -> cadastro -> login -> perfil, verifique se o servidor Node.js ainda está em execução no banco de dados. Se não estiver, pressione "ctrl c" para limpar o terminal e execute npm start novamente para restaurar as funcionalidades da aplicação.
 
-Stack: HTML, CSS, JS, MYSQL.
+## Stack de desenvolvimento front-end
+HTML, CSS, JS, MYSQL.
 
+## Stack de desenvolvimento back-end
+Foram itilizados Node.js, Express.js para criar APIs, Sequelize como ORM para interagir com um banco de dados MySQL, e JWT para autenticação
+
+De forma listada:
+
+1. **Node.js**: Ambiente de tempo de execução para JavaScript.
+2. **Express.js**: Framework web para Node.js, utilizado para criar APIs RESTful.
+3. **Sequelize**: ORM (Object-Relational Mapping) para Node.js, usado para interagir com o banco de dados MySQL.
+4. **bcryptjs**: Biblioteca para criptografar senhas.
+5. **jsonwebtoken**: Para geração e verificação de tokens JWT para autenticação.
+6. **cors**: Middleware do Express para habilitar o CORS (Cross-Origin Resource Sharing).
+7. **MySQL**: Banco de dados relacional utilizado para armazenar os dados da aplicação.
+8. **package-lock.json**: Arquivo que garante a consistência das versões das dependências instaladas em um projeto Node.js, assegurando reprodutibilidade e segurança nas instalações.
+9. **package.json**: Arquivo para gerenciar as dependências do projeto e scripts de inicialização.
+10. **.gitignore**: arquivo contendo o `node_modules`.
+11. **MySQL Workbench**: Bando de dados relacional utilizado paramontar os schemas da aplicação.
