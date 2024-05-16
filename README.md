@@ -1,3 +1,3 @@
 # ConectaPlus-Application
 
-Stack: HTML, CSS, JS, JQUERY, MYSQL
+Stack: HTML, CSS, JS, JQUERY, MYSQL.
