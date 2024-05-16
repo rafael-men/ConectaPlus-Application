@@ -8,62 +8,83 @@
   <link rel="stylesheet" href="css/estilo.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
   <title>Tela de Login</title>
 </head>
 
 <body>
-
-<div class="container" id="container">
-  <div class="form-container sign-up">
-    <form>
-      <h1>Criar uma conta</h1>
-      <div class="social-icons">
-        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-      <span>ou use seu e-mail para cadastro</span>
-      <input type="text" placeholder="Name">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <button><a href="login.html">Inscreva-se</a></button>
-    </form>
-  </div>
-  <div class="form-container sign-in">
-    <form action="javascript:void(0);">
-      <h1>Entrar</h1>
-      <div class="social-icons">
-        <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-      <span>ou use sua senha de e-mail</span>
-      <input id="in_email_login" type="email" placeholder="Email">
-      <input id="in_pass_login" type="password" placeholder="Password">
-      <a href="#">Esqueceu sua Senha?</a>
-      <button id="btn_login">Entrar</button>
-    </form>
-  </div>
-  <div class="toggle-container">
-    <div class="toggle">
-      <div class="toggle-panel toggle-left">
-        <h1>Bem vindo de volta!</h1>
-        <p>Insira seus dados pessoais para usar todos os recursos do site</p>
-        <button class="hidden" id="login">Entrar</button>
-      </div>
-      <div class="toggle-panel toggle-right">
-        <h1>Olá amigo!</h1>
-        <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
-        <button class="hidden" id="register">Inscreva-se</button>
+  <div class="message" id="message">Sucesso</div>
+  <div class="container" id="container">
+    <div class="form-container sign-up">
+      <form action="javascript:void(0);">
+        <h1>Criar uma conta</h1>
+        <div class="social-icons">
+          <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span>ou use seu e-mail para cadastro</span>
+        <input type="text" id="in_name_register" placeholder="Name">
+        <input type="email" id="in_email_register" placeholder="Email">
+        <div class="option">
+          <label >Area de atuação:</label>
+          <div>
+            <input type="radio" id="ads" name="option" value="1">
+            <label for="ads">Analise e Desenvolvimento de Sistemas</label>
+          </div>
+          <div>
+            <input type="radio" id="ci" name="option" value="2">
+            <label for="ci">Comunicação e informação</label>
+          </div>
+          <div>
+            <input type="radio" id="ep" name="option" value="3">
+            <label for="ep">Engenharia e Produção</label>
+          </div>
+          <div>
+            <input type="radio" id="ans" name="option" value="4">
+            <label for="ans">Administração, negocios e serviços</label>
+          </div>
+        </div>
+        <input type="password" id="in_pass_register" placeholder="Password">
+        <!-- <button id="btn_register"><a href="login.html">Inscreva-se</a></button> -->
+        <button id="btn_register">Inscreva-se</button>
+      </form>
+    </div>
+    <div class="form-container sign-in">
+      <form action="javascript:void(0);">
+        <h1>Entrar</h1>
+        <div class="social-icons">
+          <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <span>ou use sua senha de e-mail</span>
+        <input id="in_email_login" type="email" placeholder="Email">
+        <input id="in_pass_login" type="password" placeholder="Password">
+        <a href="#">Esqueceu sua Senha?</a>
+        <button id="btn_login">Entrar</button>
+      </form>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle">
+        <div class="toggle-panel toggle-left">
+          <h1>Bem vindo de volta!</h1>
+          <p>Insira seus dados pessoais para usar todos os recursos do site</p>
+          <button class="hidden" id="login">Entrar</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Olá amigo!</h1>
+          <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
+          <button class="hidden" id="register">Inscreva-se</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<script type="module" src="JS/login.js"></script>
-<script src="JS/app.js"></script>
+  <script type="module" src="JS/cadastro.js"></script>
+  <script type="module" src="JS/login.js"></script>
+  <script src="JS/app.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `forum` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `forum`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: forum
 -- ------------------------------------------------------
--- Server version	8.3.0
+-- Server version	8.0.37
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,7 +25,7 @@ DROP TABLE IF EXISTS `tb_area_atuacao`;
 CREATE TABLE `tb_area_atuacao` (
   `cd_area_atuacao` int NOT NULL,
   `nm_area_atuacao` varchar(45) NOT NULL,
-  `ds_area_atuacao` varchar(255) DEFAULT NULL,
+  `txt_area_atuacao` text,
   PRIMARY KEY (`cd_area_atuacao`),
   UNIQUE KEY `area_atuacao_UQ01` (`nm_area_atuacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Estrutura que armazena informações das areas de atuação da pessoa';
@@ -39,7 +37,7 @@ CREATE TABLE `tb_area_atuacao` (
 
 LOCK TABLES `tb_area_atuacao` WRITE;
 /*!40000 ALTER TABLE `tb_area_atuacao` DISABLE KEYS */;
-INSERT INTO `tb_area_atuacao` VALUES (1,'Análise e Desenvolvimento de Sistemas',NULL),(2,'Comunicação e Informação',NULL),(3,'Engenharia e Produção',NULL),(4,'Administração, negócios e serviços',NULL);
+INSERT INTO `tb_area_atuacao` VALUES (1,'Análise e Desenvolvimento de Sistemas','Olá, sou um entusiasta da tecnologia com uma paixão por desenvolver soluções inovadoras que atendam às necessidades do mercado. Com profundo conhecimento em linguagens de programação e metodologias ágeis, estou sempre em busca de novos desafios para aplicar meu expertise em análise e desenvolvimento de sistemas. Minha habilidade em pensar de forma analítica e minha criatividade me permitem criar soluções robustas e eficientes que impulsionam o sucesso de projetos de software.\n'),(2,'Comunicação e Informação','Olá! Sou um comunicador nato, apaixonado por contar histórias e transmitir informações de forma clara e envolvente. Com habilidades excepcionais em redação, edição e gerenciamento de conteúdo, tenho experiência em desenvolver estratégias de comunicação eficazes que fortalecem a presença de marcas e geram engajamento com o público-alvo. Minha criatividade e minha capacidade de entender as necessidades do público me permitem criar conteúdo relevante e impactante que conecta e inspira.\n'),(3,'Engenharia e Produção','Olá! Sou um engenheiro comprometido com a excelência e a inovação. Com ampla experiência em projetos de engenharia e produção, estou sempre em busca de maneiras de otimizar processos e garantir a qualidade e eficiência dos produtos. Minha habilidade em analisar problemas complexos e encontrar soluções criativas, aliada à minha experiência em liderar equipes multidisciplinares, me permite impulsionar o desenvolvimento de projetos e alcançar resultados excepcionais.'),(4,'Administração, negócios e serviços','Olá! Sou apaixonado por desafios e por encontrar soluções que impulsionem o crescimento de empresas. Com vasta experiência em estratégias de gestão e liderança, estou sempre buscando novas oportunidades para otimizar processos e maximizar resultados. Minha abordagem proativa e minha habilidade em identificar oportunidades de mercado me permitem contribuir significativamente para o sucesso de qualquer organização.\n');
 /*!40000 ALTER TABLE `tb_area_atuacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,16 +49,13 @@ DROP TABLE IF EXISTS `tb_pessoa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tb_pessoa` (
-  `cd_pessoa` int NOT NULL,
+  `cd_pessoa` int NOT NULL AUTO_INCREMENT,
   `nome_pessoa` varchar(250) NOT NULL,
   `email_pessoa` varchar(250) NOT NULL,
-  `senha_pessoa` varchar(45) NOT NULL,
-  `documento_pessoa` varchar(14) NOT NULL,
-  `tipo_pessoa` varchar(1) NOT NULL,
+  `senha_pessoa` varchar(250) NOT NULL,
   PRIMARY KEY (`cd_pessoa`),
-  UNIQUE KEY `pessoa_UQ01` (`email_pessoa`),
-  UNIQUE KEY `pessoa_UQ02` (`documento_pessoa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabela para armazenar os registros de pessoa';
+  UNIQUE KEY `pessoa_UQ01` (`email_pessoa`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Tabela para armazenar os registros de pessoa';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +64,7 @@ CREATE TABLE `tb_pessoa` (
 
 LOCK TABLES `tb_pessoa` WRITE;
 /*!40000 ALTER TABLE `tb_pessoa` DISABLE KEYS */;
-INSERT INTO `tb_pessoa` VALUES (1,'Helena carvalho','helena.carvalho@gmail.com','202cb962ac59075b964b07152d234b70','94563204056','1'),(2,'Rafael Menezes Gonçalves','rafael.mg@gmail.com','202cb962ac59075b964b07152d234b70','57952866052','1');
+INSERT INTO `tb_pessoa` VALUES (17,'Helena','helena@email.com','$2a$10$w3EDrhqhHml0NInTe3izzePJCdBtF8Ir89SfKMxHU./Mm1pxFrTTa'),(18,'Rafael','rafael@email.com','$2a$10$YW0k2xi.Hw97YWns.BSZmetjDl1UuvnC6m/16/MUhZiTXJY6J.bm2'),(19,'Nabal','nabal@email.com','$2a$10$mUUUvccg4fsYOvlCVETBROx8M.PHhp9HaLwafxukay.6eKr1yZdXO'),(20,'Marilia','marilia@email.com','$2a$10$z0KwAw8gjL9tQmf25X7RCe2//dlHQE3tWhZHcIalqYuOobndGbCCe');
 /*!40000 ALTER TABLE `tb_pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,12 +78,7 @@ DROP TABLE IF EXISTS `tb_pessoa_area`;
 CREATE TABLE `tb_pessoa_area` (
   `cd_pessoa` int NOT NULL,
   `cd_area_atuacao` int NOT NULL,
-  `dt_inicio_vigencia` date NOT NULL,
-  `dt_fim_vigencia` date DEFAULT NULL,
-  PRIMARY KEY (`cd_pessoa`,`cd_area_atuacao`),
-  KEY `cd_area_atuacao_idx` (`cd_area_atuacao`),
-  CONSTRAINT `pessoa_area_FK01` FOREIGN KEY (`cd_area_atuacao`) REFERENCES `tb_area_atuacao` (`cd_area_atuacao`),
-  CONSTRAINT `pessoa_area_FK02` FOREIGN KEY (`cd_pessoa`) REFERENCES `tb_pessoa` (`cd_pessoa`)
+  PRIMARY KEY (`cd_pessoa`,`cd_area_atuacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -98,17 +88,9 @@ CREATE TABLE `tb_pessoa_area` (
 
 LOCK TABLES `tb_pessoa_area` WRITE;
 /*!40000 ALTER TABLE `tb_pessoa_area` DISABLE KEYS */;
-INSERT INTO `tb_pessoa_area` VALUES (1,2,'2024-01-01',NULL),(1,3,'2024-01-01',NULL),(1,4,'2024-01-01',NULL),(2,1,'2024-01-01',NULL),(2,3,'2024-01-01',NULL);
+INSERT INTO `tb_pessoa_area` VALUES (17,4),(18,2),(19,3),(20,1);
 /*!40000 ALTER TABLE `tb_pessoa_area` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'forum'
---
-
---
--- Dumping routines for database 'forum'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -119,4 +101,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-07 13:16:46
+-- Dump completed on 2024-05-11 21:32:39
