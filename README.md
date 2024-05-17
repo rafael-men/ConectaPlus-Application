@@ -1,4 +1,5 @@
 # ConectaPlus-Application
+A aplicação apresenta um fluxo de telas relacionadas às seguintes páginas: inicial, login, cadastro e perfil do usuário. Ao acessar o site, o usuário tem a opção de clicar no botão "Login/Cadastro", permitindo realizar o cadastro e, posteriormente, o login. Após efetuar o login, o usuário é redirecionado para a página de perfil, a qual contém um botão de "Sair". Esse botão permite que o usuário retorne à página inicial, possibilitando repetir esse ciclo conforme necessário.
 
 ## Tutorial para inicializar o sistema
 
