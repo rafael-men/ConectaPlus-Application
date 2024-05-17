@@ -83,7 +83,7 @@ app.get("/login", async (req, res) => {
       where: { email_pessoa: req.query.email }
     }).then(result => {
       if (bcrypt.compareSync(req.query.pass, result.senha_pessoa) == true) {
-        res.status(200).send(jwt.sign({ id: result.cd_pessoa }, secret, { algorithm: "HS256", expiresIn: "1h" }));
+        res.status(200).send(jwt.sign({ id: result.cd_pessoa }, secret, { algorithm: "HS256", expiresIn: "60m" }));
       } else {
         res.status(401).end("Email ou senha incorreta");
       }

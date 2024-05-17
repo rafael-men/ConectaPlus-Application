@@ -26,7 +26,7 @@ axios.get("http://localhost:8001/getuser", {
 });
 
 
-$(".btn_exit").click(function(e) { 
+$(".btn_exit").click(function (e) {
   window.sessionStorage.removeItem("token");
   window.location.href = "/index.html"
 });
