@@ -38,12 +38,12 @@ npm start
 Obs.: Em caso de erro após o primeiro ciclo de welcome -> cadastro -> login -> perfil, verifique se o servidor Node.js ainda está em execução no banco de dados. Se não estiver, pressione "ctrl c" para limpar o terminal e execute npm start novamente para restaurar as funcionalidades da aplicação.
 
 ## Stack de desenvolvimento front-end
-HTML, CSS, JS, MYSQL.
+HTML, CSS, JS.
 
 ## Stack de desenvolvimento back-end
-Foram itilizados Node.js, Express.js para criar APIs, Sequelize como ORM para interagir com um banco de dados MySQL, e JWT para autenticação
+Foram itilizados JavaScript, Node.js, Express.js para criar APIs, Sequelize como ORM para interagir com um banco de dados MySQL, e JWT para autenticação
 
-De forma listada:
+De forma detalhada:
 
 1. **Node.js**: Ambiente de tempo de execução para JavaScript.
 2. **Express.js**: Framework web para Node.js, utilizado para criar APIs RESTful.
