@@ -15,7 +15,7 @@ const secret = "sua senha";
 const sequelize = new Sequelize('nome do schema no BD', 'root padrão ou personalizada', 'senha do BD', {
   host: 'localhost',
   port: 3306,
-  dialect: 'senha do BD',
+  dialect: 'mysql',
   define: {
     freezeTableName: true
   }
