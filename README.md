@@ -55,4 +55,3 @@ De forma detalhada:
 8. **package-lock.json**: Arquivo que garante a consistência das versões das dependências instaladas em um projeto Node.js, assegurando reprodutibilidade e segurança nas instalações.
 9. **package.json**: Arquivo para gerenciar as dependências do projeto e scripts de inicialização.
 10. **.gitignore**: arquivo contendo o `node_modules`.
-11. **MySQL Workbench**: Bando de dados relacional utilizado paramontar os schemas da aplicação.
