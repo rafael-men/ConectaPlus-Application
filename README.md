@@ -10,9 +10,9 @@ Para começar, siga estes passos:
 2. Na pasta do back-end, substitua os campos no arquivo `index.js` com suas credenciais:
 
 ```javascript
-const secret = "sua senha";
+const secret = "mysql"; //JWT
 
-const sequelize = new Sequelize('nome do schema no BD', 'root padrão ou personalizada', 'senha do BD', {
+const sequelize = new Sequelize('nome do schema no BD', 'usuario', 'senha do BD', {
   host: 'localhost',
   port: 3306,
   dialect: 'mysql',
